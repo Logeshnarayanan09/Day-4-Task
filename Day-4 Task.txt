@@ -1,0 +1,596 @@
+                              // 1Programs using Anonymous function and IIFE function //           
+
+                        // a1)Print odd numbers in Anonymous Function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        var findodd = function(){
+            var arr = [10,15,20,23,30,39];
+            for(i=0; i<arr.length; i++){
+                if(arr[i]%2 !=0){
+                    console.log(arr[i]);
+                }
+            }
+        }
+        (findodd);
+    </script>
+</body>
+</html>
+
+
+                         // a2)Print odd numbers in IIFE function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        (function(){
+            var arr = [210,117,208,235,302,397];
+            for(i=0; i<arr.length; i++){
+                if(arr[i]%2 !=0){
+                    console.log(arr[i]);
+                }
+            }
+        }
+        )();
+    </script>
+</body>
+</html>
+
+
+                      // b1)convert string to little caps in anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        var stringArray = ["guvi", "zenclass", "fsd"];
+        var littleCaps = function(val){
+            for(var i = 0; i < val.length; i++){
+                val[i] = val[i].charAt(0).toUpperCase() + val[i].substring(1).toLowerCase();
+            }
+        };
+        littleCaps(stringArray);
+        console.log(stringArray);
+    </script>
+</body>
+</html>
+
+
+                        // b2)convert string to little caps in IIFE function //
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+       (function(){
+        var stringArray = ["tamil", "english", "malayalam"];
+        for(var i = 0; i < stringArray.length; i++){
+           stringArray[i] = stringArray[i].charAt(0).toUpperCase() + stringArray[i].substring(1).toLowerCase();
+           console.log(stringArray[i]);
+        }
+       })()
+    </script>
+</body>
+</html>
+
+
+
+                              // c1)sum of the array value using anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        var numArray = [10, 18, 22, 28, 32];
+        var sum = 0;
+        (function(){
+            for(i = 0; i < numArray.length; i++){
+                sum+=numArray[i];
+            }
+        })();
+        console.log(sum);
+    </script>
+</body>
+</html>
+
+
+
+                             // c2)sum of the array value using IIFE function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+       (function(){
+        var numArray = [11, 15, 20, 25, 30];
+        var sum = 0;
+        for(var i = 0; i < numArray.length; i++){
+            sum = sum + numArray[i];
+        }
+        console.log(sum);
+       })()
+    </script>
+</body>
+</html>
+
+
+
+                             // d1)Return the prime numbers using anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        var numArray = [5, 7, 9, 11, 12, 15, 17,23];
+        var findprime = numArray.filter(function(value){
+            if(value<=1){
+                return false;
+            }
+            for(var i = 2; i <= Math.sqrt(value); i++){
+                if(value % i == 0){
+                    return false;
+                }
+            }
+            return true;
+        });
+        console.log(findprime);
+    </script>
+</body>
+</html>
+
+
+                         // d2)Return the prime numbers using IIFE function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+        (function(){
+            var numArray = [33, 31, 44, 47, 51, 56, 66, 61];
+            var findprime = numArray.filter(function(value){
+            if(value<=1)return false;
+            for(var i = 2; i <= Math.sqrt(value); i++){
+                if(value % i == 0) return false;
+                }
+                return true;
+            });
+            console.log(findprime);
+         })();
+    </script>
+</body>
+</html>
+
+
+                         // e1)Return the palindromes using anonymous function //
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+       var strArray = ["malayalam", "daller", "level", "system", "tenet"];
+       var findPalindrome = function(value) {
+        return value.filter(function(str) {
+          var reversestring = str.split("").reverse().join("");
+          return str === reversestring;
+        })
+       }
+       var palindrome = findPalindrome(strArray);
+       console.log(palindrome);
+    </script>
+</body>
+</html>
+
+
+
+                         // e2)Return the palindromes using IIFE function //
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Task</title>
+</head>
+<body>
+    <script>
+       (function() {
+        var strArray = ["malayalam", "level", "tamil", "madam", "english"];
+        var result =[];
+        for(var i = 0; i < strArray.length; i++){
+            var word = strArray[i].toLowerCase();
+            var reversedStr = word.split("").reverse("").join("");
+            if(word === reversedStr){
+                result.push(word);
+            }
+        }
+        console.log(result);
+       })()
+    </script>
+</body>
+</html>
+   
+
+                               // f1)Median of two sorted array in anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+   <script>
+    var arr1 = [10, 15, 20];
+    var arr2 = [25, 30, 35];
+    var findMid = function(arr1, arr2){
+        var length = arr1.length;
+        var middleIndex = Math.floor(length/2)-1;
+        var median = (arr1[middleIndex] + arr2[middleIndex] / 2);
+        return median;
+    }
+    var result = findMid(arr1, arr2);
+    console.log(result);
+   </script>
+</body>
+</html>
+
+
+
+                              // f2)Median of two sorted array in IIFE function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+   <script>
+     (function () {
+        const nums1 = [1, 3, 6];
+        const nums2 = [2, 5, 9];
+        const median = findMedianSortedArrays(nums1, nums2);
+        function findMedianSortedArrays(nums1, nums2) {
+          const mergedArray = nums1.concat(nums2); 
+          const sortedArray = mergedArray.sort((a, b) => a - b); 
+          const length = sortedArray.length;
+          const mid = Math.floor(length / 2);
+          if (length % 2 === 0) {
+           return (sortedArray[mid - 1] + sortedArray[mid]) / 2;
+          } else {
+            return sortedArray[mid];
+      }
+   }
+  console.log(median);
+})();
+
+  </script>
+</body>
+</html>
+
+
+                                    // g1)Remove duplicate value in anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var numArray = [1,2,3,4,5,3,2,4,1,7];
+        var findDuplicate = function(arr){
+            var result = [];
+            for(var i = 0; i < arr.length; i++){
+                if(result.indexOf(arr[i]) === -1){
+                    result.push(arr[i]);
+                }
+            } return result;
+        }
+        var unique = findDuplicate(numArray);
+        console.log(unique);
+    </script>
+</body>
+</html>
+
+
+                                  // g2)Remove duplicate values in IIFE function //
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        (function(){
+            var numArray = [1,2,3,4,5,3,2,4,1,7,8,8,9];
+            var result = [];
+            for(var i = 0; i < numArray.length; i++){
+                if(result.indexOf(numArray[i]) === -1){
+                    result.push(numArray[i]);
+                }
+            }
+              console.log(result);
+        })();
+        
+    </script>
+</body>
+</html>
+
+
+                                  // h1)Rotate an array by k time in anonymous function //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var numArray = [1, 2, 3, 4, 5, 6];
+        var k = 2;
+        var rotateArray = (function() {
+            return function(arr, k) {
+                for(var i = 0; i < k; i++){
+                    var lastvalue = arr.pop();
+                    arr.unshift(lastvalue);
+                }
+                return arr;
+            };
+        })()
+        var result = rotateArray(numArray, k);
+        console.log(result);
+    </script>
+</body>
+</html>
+
+
+                            // h2)Rotate an array by k times in IIFE function //
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        (function(){
+            var numArray = [1, 3, 4, 5, 2, 6];
+            var k = 2;
+            var rotateArray = (function() {
+                return function(arr, k){
+                    for(var i = 0; i < k; i++){
+                        var lastvalue = arr.pop();
+                        arr.unshift(lastvalue);
+                    }
+                    return arr;
+                };
+            }) ()
+            var result = rotateArray(numArray, k);
+            console.log(result);
+        }) ();
+    </script>
+</body>
+</html>
+
+
+
+                                    // 2 Programs using Arrow function //
+
+
+
+                                    // a) Print odd numbers in an array //
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var numArray = [12, 13, 15, 18, 22, 25, 29];
+        var findodd = (val) => {
+            val.forEach((element) => {
+                if((element)%2!==0){
+                    console.log(element);
+                }
+            });
+        }
+        findodd(numArray);
+    </script>
+</body>
+</html>
+
+
+
+                              // b) Little caps in a string array //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var strArray = ["tamil", "english", "maths","science"];
+        var capsString = (arr) => {
+            for(var i = 0; i < arr.length; i++){
+                arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1).toLowerCase();
+            }
+        }
+        capsString(strArray);
+        console.log(strArray);
+    </script>
+</body>
+</html>
+
+
+                              // c) Sum of all an array values //
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var strArray = ["tamil", "english", "maths","science"];
+        var capsString = (arr) => {
+            for(var i = 0; i < arr.length; i++){
+                arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1).toLowerCase();
+            }
+        }
+        capsString(strArray);
+        console.log(strArray);
+    </script>
+</body>
+</html>
+
+
+
+                                // d) Return prime numbers in an array //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var numArry = [1, 2, 15, 16, 17, 23, 29];
+        var findPrime = (arr) => {
+            if(arr<= 1){
+                return false;
+            }
+            for(var i = 2; i <= Math.sqrt(arr); i++){
+                if(arr % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        var findSolution = (val) => val.filter((num) => findPrime(num));
+        var result = findSolution(numArry);
+        console.log(result);
+    </script>
+</body>
+</html>
+
+
+                                 // e) Return palindrome an array //
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        var strArray = ["malayalam", "level", "system", "tenet", "switch"];
+        var findPalindrome = (arr) => {
+            var str = arr.toString();
+            var reversedStr = str.split("").reverse().join("");
+            return str === reversedStr;
+        };
+        var findSolution = (val) => val.filter((words) => findPalindrome(words));
+        var result = findSolution(strArray);
+        console.log(result);
+    </script>
+</body>
+</html>
+
+
+
